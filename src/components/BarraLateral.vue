@@ -2,7 +2,8 @@
   <div class="q-px-xs q-pb-lg">
     <q-card flat bordered class="my-card">
       <q-card-section>
-        <div class="text-h6">
+        <q-skeleton v-if="!v" />
+        <div class="text-h6" v-else>
           Serviços Inclusos
 
           <template>
@@ -17,7 +18,8 @@
       </q-card-section>
 
       <q-card-section class="q-pt-none">
-        <div id="qcard-text">Domínio</div>
+        <q-skeleton v-if="!v" />
+        <div id="qcard-text" v-else>Domínio</div>
 
         <template>
           <q-tooltip
@@ -36,7 +38,8 @@
       <q-separator inset />
 
       <q-card-section class="q-pt-none">
-        <div id="qcard-text">Hospedagem de site</div>
+        <q-skeleton v-if="!v" />
+        <div id="qcard-text" v-else>Hospedagem de site</div>
         <template>
           <q-tooltip
             content-class="bg-grey-10"
@@ -54,7 +57,8 @@
       <q-separator inset />
 
       <q-card-section class="q-pt-none">
-        <div id="qcard-text">Criação do site</div>
+        <q-skeleton v-if="!v" />
+        <div id="qcard-text" v-else>Criação do site</div>
         <template>
           <q-tooltip
             content-class="bg-grey-10"
@@ -71,7 +75,8 @@
       <q-separator inset />
 
       <q-card-section class="q-pt-none">
-        <div id="qcard-text">Configuração do sistema online</div>
+        <q-skeleton v-if="!v" />
+        <div id="qcard-text" v-else>Configuração do sistema online</div>
         <template>
           <q-tooltip
             content-class="bg-grey-10"
@@ -88,7 +93,8 @@
       <q-separator inset />
 
       <q-card-section class="q-pt-none">
-        <div id="qcard-text">Certificado Segurança SSL</div>
+        <q-skeleton v-if="!v" />
+        <div id="qcard-text" v-else>Certificado Segurança SSL</div>
         <template>
           <q-tooltip
             content-class="bg-grey-10"
@@ -106,7 +112,8 @@
       <q-separator inset />
 
       <q-card-section class="q-pt-none">
-        <div id="qcard-text">Treinamento</div>
+        <q-skeleton v-if="!v" />
+        <div id="qcard-text" v-else>Treinamento</div>
         <template>
           <q-tooltip
             content-class="bg-grey-10"
@@ -123,7 +130,8 @@
       <q-separator inset />
 
       <q-card-section class="q-pt-none">
-        <div id="qcard-text">Suporte</div>
+        <q-skeleton v-if="!v" />
+        <div id="qcard-text" v-else>Suporte</div>
         <template>
           <q-tooltip
             content-class="bg-grey-10"
@@ -140,7 +148,8 @@
       <q-separator inset />
 
       <q-card-section class="q-pt-none bg-indigo">
-        <div id="qcard-text" style="color: white;">
+        <q-skeleton v-if="!v" />
+        <div id="qcard-text" style="color: white;" v-else>
           Após 12 meses <strong> R$749,50 por ano</strong>
         </div>
 
@@ -161,7 +170,8 @@
       <q-separator inset />
 
       <q-card-section class="q-pt-none bg-indigo">
-        <div id="qcard-text" style="color: white;">
+        <q-skeleton v-if="!v" />
+        <div id="qcard-text" style="color: white;" v-else>
           Total hoje <strong> R$1249,45</strong>
         </div>
 
@@ -182,7 +192,8 @@
       <q-separator inset />
 
       <q-card-section class="q-pt-none bg-indigo">
-        <div id="qcard-text" style="color: white;">
+        <q-skeleton v-if="!v" />
+        <div id="qcard-text" style="color: white;" v-else>
           Boleto bancário, cartão de crédito em até 12x, Paypal, Débito,
           Transferência ou Criptomoedas.
         </div>
@@ -191,7 +202,8 @@
       <q-separator inset />
 
       <q-card-section class="q-pt-none">
-        <div id="qcard-text">
+        <q-skeleton v-if="!v" />
+        <div id="qcard-text" v-else>
           <strong>Suporte 24h, todos os dias.</strong><br />
           Garanta seu site sempre no ar
         </div>
@@ -218,6 +230,12 @@
 
 <script>
 export default {
+  data() {
+    return {
+      //Placeholder para verificação de carregamento de algum elemento
+      v: true
+    };
+  },
   name: "barraLateral"
 };
 </script>
